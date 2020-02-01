@@ -8,5 +8,6 @@
 !.vim/*
 !.fzf*
 !.vim/**
-
+!.configFiles/**
+!.configFiles
 
