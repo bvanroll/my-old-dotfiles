@@ -1,8 +1,8 @@
 *
 !.gitignore
 !.zshrc
-!.sshkeys/*
-!.sshkeys
+!sshkeys/*
+!sshkeys
 !.vimrc
 !.vim
 !.vim/*
