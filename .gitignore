@@ -10,4 +10,5 @@
 !.vim/**
 !.configFiles/**
 !.configFiles
-
+!.scripts
+!.scripts/**

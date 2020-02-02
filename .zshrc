@@ -130,3 +130,4 @@ sst() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.scripts/zsh
