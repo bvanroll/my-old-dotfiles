@@ -12,3 +12,4 @@
 !.configFiles
 !.scripts
 !.scripts/**
+!.vars
