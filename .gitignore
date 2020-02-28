@@ -13,3 +13,6 @@
 !.scripts
 !.scripts/**
 !.vars
+!.kube
+!.kube/configs
+

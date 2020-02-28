@@ -128,7 +128,10 @@ alias sshkey= "cat ~/.ssh/id_rsa.pub"
 sst() {
 	ssh $1 -t 'tmux -CC'
 }
-
+alias mistioctl="istioctl --kubeconfig ~/.kube/mconfig"
+alias mubectl="kubectl --kubeconfig ~/.kube/mconfig"
+alias gubectl="kubectl --kubeconfig ~/.kube/gconfig"
+alias gistioctl="istioctl --kubeconfig ~/.kube/gconfig"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source ~/.vars
@@ -136,6 +139,16 @@ source ~/.scripts/zsh
 export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
 export GOPATH="/User/beppe/go"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-  export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
- export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export JRE_HOME=$(/usr/libexec/java_home)
+alias mkube="minikube"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/usr/local/opt/gettext/bin:$PATH"

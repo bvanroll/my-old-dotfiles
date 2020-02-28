@@ -1,0 +1,5 @@
+echo "listing kubeconfigs for user $USER :\n"
+ls -1 $HOME/.kube/configs
+echo "\nplease select one of the configs above:"
+read con
+cp $HOME/.kube/configs/$con $HOME/.kube/config
