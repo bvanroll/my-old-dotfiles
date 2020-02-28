@@ -15,4 +15,5 @@
 !.vars
 !.kube
 !.kube/configs
-
+!wallpapers
+!wallpapers/**
