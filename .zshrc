@@ -1,3 +1,6 @@
+
+plugins=(git kubectl command-not-found common-aliases sublime)
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/opt/metasploit-framework/bin/:/Applications/Aseprite.app/Contents/MacOS/:$HOME/.scripts/bash:$PATH
@@ -70,7 +73,6 @@ ZSH_THEME="jreese"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,7 +82,6 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-bindkey -v
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -126,7 +127,7 @@ export PATH="/usr/local/opt/e2fsprogs/bin:$PATH"
 
 alias sshkey= "cat ~/.ssh/id_rsa.pub"
 
-sst() {
+smux() {
 	ssh $1 -t 'tmux -CC'
 }
 alias mistioctl="istioctl --kubeconfig ~/.kube/mconfig"
@@ -146,10 +147,15 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export JRE_HOME=$(/usr/libexec/java_home)
 alias mkube="minikube"
-
+alias reload="source ~/.zshrc"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/gettext/bin:$PATH"
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+alias virc="vim ~/.zshrc"
+alias kube="kubectl"
+KUBECONFIG=~/.kube/configs/*
+
