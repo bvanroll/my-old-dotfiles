@@ -1,5 +1,5 @@
-
-plugins=(git kubectl command-not-found common-aliases sublime)
+zmodload zsh/zprof
+plugins=(git kubectl command-not-found)
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -13,7 +13,7 @@ export ZSH="/Users/beppe/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="jreese"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -147,15 +147,16 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export JRE_HOME=$(/usr/libexec/java_home)
 alias mkube="minikube"
-alias reload="source ~/.zshrc"
+alias reload="clear; source ~/.zshrc"
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+#if [ -f '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
 alias virc="vim ~/.zshrc"
 alias kube="kubectl"
 KUBECONFIG=~/.kube/configs/*
-
+#kubectl completion
+#if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
