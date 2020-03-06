@@ -1,9 +1,8 @@
 zmodload zsh/zprof
-plugins=(git kubectl command-not-found)
+plugins=(git kubectl)
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/opt/metasploit-framework/bin/:/Applications/Aseprite.app/Contents/MacOS/:$HOME/.scripts/bash:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/beppe/.oh-my-zsh"
@@ -12,8 +11,8 @@ export ZSH="/Users/beppe/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
 ZSH_THEME="robbyrussell"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,8 +76,7 @@ ZSH_THEME="robbyrussell"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -102,51 +100,28 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-alias python="python3"
-alias pip="pip3"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 #if [[ -e $HOME/.motd ]]; then cat $HOME/.motd; fi
 
-
-astexture () {
-	aseprite -b $1 --save-as map-{layer}.png
-}
-
-asexport () {
-	aseprite -b --split-layers $1 --sheet $1.png
-}
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export PATH="/usr/local/opt/e2fsprogs/bin:$PATH"
-export PATH="/usr/local/opt/e2fsprogs/sbin:$PATH"
-export PATH="/usr/local/opt/e2fsprogs/bin:$PATH"
-
+#export PATH=$PATH:/usr/local/bin:$HOME/.rvm/bin:/usr/local/opt/icu4c/bin:/usr/local/opt/icu4c/sbin:/usr/local/opt/e2fsprogs/bin:/usr/local/opt/e2fsprogs/sbin:/usr/local/opt/terraform@0.11/bin:$PATH:/usr/local/opt/openssl@1.1/bin
+export PATH=$PATH:/usr/local/bin:/Users/beppe/Library/Python/3.7/bin
 alias sshkey= "cat ~/.ssh/id_rsa.pub"
 
 smux() {
 	ssh $1 -t 'tmux -CC'
 }
-alias mistioctl="istioctl --kubeconfig ~/.kube/mconfig"
-alias mubectl="kubectl --kubeconfig ~/.kube/mconfig"
-alias gubectl="kubectl --kubeconfig ~/.kube/gconfig"
-alias gistioctl="istioctl --kubeconfig ~/.kube/gconfig"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/.vars
-source ~/.scripts/zsh
-export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
+
 export GOPATH="/User/beppe/go"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export JRE_HOME=$(/usr/libexec/java_home)
-alias mkube="minikube"
 alias reload="clear; source ~/.zshrc"
 # The next line updates PATH for the Google Cloud SDK.
 #if [ -f '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -156,7 +131,6 @@ alias reload="clear; source ~/.zshrc"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 alias virc="vim ~/.zshrc"
-alias kube="kubectl"
 KUBECONFIG=~/.kube/configs/*
 #kubectl completion
-#if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
