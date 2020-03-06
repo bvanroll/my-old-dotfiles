@@ -20,3 +20,5 @@
 !wallpapers/**
 !.oh-my-zsh
 !.oh-my-zsh/**
+!.custom
+!.custom/**
