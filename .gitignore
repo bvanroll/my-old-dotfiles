@@ -18,3 +18,5 @@
 !.kube/configs
 !wallpapers
 !wallpapers/**
+!.oh-my-zsh
+!.oh-my-zsh/**
