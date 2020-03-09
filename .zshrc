@@ -130,7 +130,8 @@ alias reload="clear; source ~/.zshrc"
 # The next line enables shell command completion for gcloud.
 #if [ -f '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-
+alias checkout="git checkout"
+alias vi="vim"
 alias virc="vim ~/.zshrc"
 KUBECONFIG=~/.kube/configs/*
 #kubectl completion
