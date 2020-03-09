@@ -127,6 +127,12 @@ alias reload="clear; source ~/.zshrc"
 # The next line updates PATH for the Google Cloud SDK.
 #if [ -f '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
+export FZF_COMPLETION_TRIGGER=''
+#bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
+#bindkey '^I' fzf-completion
+bindkey '\e\t' fzf-completion
+
 # The next line enables shell command completion for gcloud.
 #if [ -f '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/gettext/bin:$PATH"
