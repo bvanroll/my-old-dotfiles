@@ -142,3 +142,10 @@ alias virc="vim ~/.zshrc"
 KUBECONFIG=~/.kube/configs/*
 #kubectl completion
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+# Load Git completion
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+
+autoload -Uz compinit && compinit
+
+
