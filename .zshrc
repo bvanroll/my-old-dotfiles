@@ -148,4 +148,4 @@ fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
 
-
+alias cexpose="kubectl port-forward hashicorp-consul-server-0 8500:8500"
