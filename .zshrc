@@ -1,5 +1,5 @@
 zmodload zsh/zprof
-plugins=(git kubectl sublime)
+plugins=(git kubectl  sublime zsh-autosuggestions)
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -127,11 +127,25 @@ alias reload="clear; source ~/.zshrc"
 # The next line updates PATH for the Google Cloud SDK.
 #if [ -f '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
+export FZF_COMPLETION_TRIGGER=''
+#bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
+#bindkey '^I' fzf-completion
+bindkey '\e\t' fzf-completion
+
 # The next line enables shell command completion for gcloud.
 #if [ -f '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/beppe/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-
+alias checkout="git checkout"
+alias vi="vim"
 alias virc="vim ~/.zshrc"
 KUBECONFIG=~/.kube/configs/*
 #kubectl completion
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+# Load Git completion
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+
+autoload -Uz compinit && compinit
+
+alias cexpose="kubectl port-forward hashicorp-consul-server-0 8500:8500"
