@@ -1,5 +1,5 @@
 zmodload zsh/zprof
-plugins=(docker git kubectl zsh-autosuggestions)
+plugins=(sublime docker git kubectl zsh-autosuggestions)
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
