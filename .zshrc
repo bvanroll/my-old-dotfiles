@@ -1,5 +1,5 @@
 zmodload zsh/zprof
-plugins=(git kubectl zsh-autosuggestions)
+plugins=(docker git kubectl zsh-autosuggestions)
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -147,5 +147,5 @@ zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
-
+alias chns="kubectl config set-context --current --namespace"
 alias cexpose="kubectl port-forward hashicorp-consul-server-0 8500:8500"
