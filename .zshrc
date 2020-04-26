@@ -102,7 +102,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+HOMEBREW_NO_INSTALL_CLEANUP=1
 
 #if [[ -e $HOME/.motd ]]; then cat $HOME/.motd; fi
 
